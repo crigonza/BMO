@@ -20,9 +20,27 @@ p {
 .bmo-container {
   width: 600px;
   height: 600px;
-  background: #2c372a;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+}
+.bmo-container .background {
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(45deg, rgb(17, 120, 125), rgb(116, 14, 45), rgb(7, 67, 57), black);
+  background-size: 400% 400%;
+  animation: backgrad 4s linear infinite;
+}
+@keyframes backgrad {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }
 .bmo-container .bmo-skate-container {
   position: absolute;
@@ -275,7 +293,7 @@ p {
   align-items: center;
   perspective-origin: 30% 40%;
   perspective: 600px;
-  transform: translateX(50px) translateY(-45px);
+  transform: translateX(50px) translateY(-547px);
 }
 .bmo-container .bmo-body-container .body-back-container {
   width: 150px;
@@ -295,9 +313,16 @@ p {
   transform: translateY(-200px) translateX(30px);
 }
 .bmo-container .bmo-body-container .body-back-container .bmo-letters-container p {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 5rem;
+  font-family: "Konkhmer Sleokchher", cursive;
+  font-size: 4rem;
   transform: rotate(90deg) translateX(-200px) translateY(10px);
+}
+.bmo-container .bmo-body-container .body-back-container .bmo-o {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2rem;
+  background: black;
+  transform: translateY(-285px) translateX(50px);
 }
 .bmo-container .bmo-body-container .body-front-container {
   width: 250px;
@@ -315,25 +340,43 @@ p {
   border: 2px black solid;
   border-radius: 1rem;
   margin-top: 1.5rem;
-  display: inline-flex;
   transform: translateX(28px);
+}
+.bmo-container .bmo-body-container .body-front-container .screen-container .bright-screen {
+  width: 190px;
+  height: 170px;
+  background: #bdf7da;
+  border-radius: 1rem;
+  transform: translateX(0px);
+  animation: bright 0.5s linear infinite;
+}
+@keyframes bright {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .bmo-container .bmo-body-container .body-front-container .screen-container .left-eye {
   width: 12px;
   height: 18px;
   background: black;
   border-radius: 1rem;
-  transform: translateX(40px) translateY(50px);
+  transform: translateX(40px) translateY(-120px);
 }
 .bmo-container .bmo-body-container .body-front-container .screen-container .right-eye {
   width: 12px;
   height: 18px;
   background: black;
   border-radius: 1rem;
-  transform: translateX(130px) translateY(50px);
+  transform: translateX(140px) translateY(-138px);
 }
 .bmo-container .bmo-body-container .body-front-container .screen-container .mouth-container {
-  transform: translateX(45px) translateY(80px);
+  transform: translateX(66px) translateY(-120px);
 }
 .bmo-container .bmo-body-container .body-front-container .screen-container .mouth-container .mouth {
   position: absolute;
@@ -535,6 +578,16 @@ p {
   border-top: none;
   transform: rotate(10deg) translateX(-17px) translateY(-2px);
 }
+.bmo-container .arm-container .hand {
+  width: 5px;
+  height: 13px;
+  background: var(--arms-color);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: var(--border-black);
+  border-top: none;
+  transform: rotate(6deg) translateX(-19px) translateY(-16px);
+}
 .bmo-container .legs-container {
   position: absolute;
   transform: translateY(342px) translateX(115px);
@@ -571,6 +624,15 @@ p {
   background: #4c7a86;
   border: var(--border-black);
   border-radius: 0 2rem 2rem 1rem;
+}
+
+@keyfames backgrad {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
